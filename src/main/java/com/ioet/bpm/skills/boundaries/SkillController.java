@@ -61,7 +61,10 @@ public class SkillController {
 
         Skill skill = skillOptional.get();
         skill.setName(skillDetails.getName());
-        skill.setDescription(skillDetails.getDescription());
+        skill.setLabel(skillDetails.getLabel());
+        skill.setBusinessValue(skillDetails.getBusinessValue());
+        skill.setCategory(skillDetails.getCategory());
+
         skillRepository.save(skill);
         return new ResponseEntity<>(skill, HttpStatus.OK);
     }
